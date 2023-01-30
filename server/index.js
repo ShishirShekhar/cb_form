@@ -37,15 +37,8 @@ app.get("/", (req, res) => {
 
 // Create /data route to get all the data
 app.get("/data", async (req, res) => {
-    const allData = await DataModel.find()
-    .then(() => {
-        res.json(allData);
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(404).json("Error!!");
-    });
-    
+    const allData = await DataModel.find();
+    return res.json(allData);
 });
 
 // Create /submit route to submit all the data
