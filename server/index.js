@@ -19,12 +19,12 @@ const formSchema = new mongoose.Schema({
     name: String,
     dob: Date,
     email: String,
-    mobile: Number,
-    whatsapp: Number,
+    mobile: String,
+    whatsapp: String,
     branch: String,
-    reg: Number,
-    year: Number,
-    domain: Number,
+    reg: String,
+    year: String,
+    domain: String,
     reason: String,
 });
 // Create form model
@@ -37,8 +37,15 @@ app.get("/", (req, res) => {
 
 // Create /data route to get all the data
 app.get("/data", async (req, res) => {
-    const allData = await DataModel.find();
-    return res.json(allData);
+    const allData = await DataModel.find()
+    .then(() => {
+        res.json(allData);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(404).json("Error!!");
+    });
+    
 });
 
 // Create /submit route to submit all the data
