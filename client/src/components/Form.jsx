@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const Form = () => {
-    const domains = ["Technical team", "Graphic designing & Video editing", 
+    const domains = ["Select Domain", "Technical team", "Graphic designing & Video editing", 
                     "Social media & Content writing", "Event management & Marketing",
                     "Public Speaking"];
 
@@ -11,7 +11,7 @@ const Form = () => {
     const [Email, setEmail] = useState("");
     const [Mobile, setMobile] = useState("");
     const [Whatsapp, setWhatsapp] = useState("");
-    const [Branch, setBranch] = useState("B.Tech CSE");
+    const [Branch, setBranch] = useState("");
     const [Reg, setReg] = useState("");
     const [Year, setYear] = useState("");
     const [Domain, setDomain] = useState(domains[0]);
@@ -39,94 +39,63 @@ const Form = () => {
     }
 
     return (
-        <form onSubmit={ handleSubmit } className="top-1/2 translate-x-2/4">
-            <div className="flex flex-col">
-                <label>
-                    Name
-                </label>
+        <form onSubmit={ handleSubmit } className="flex flex-col items-center w-full">
+            <h1 className="text-3xl font-bold pb-4">CB Recruitment Form</h1>
+
+            <div className="flex flex-col gap-2 items-center w-96">
                 <input type="text" value={ Name } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none" 
                     onChange={(e) => setName(e.target.value)} 
-                    id="name" required
+                    placeholder="Full Name" required
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Email
-                </label>
                 <input type="email" value={ Email } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setEmail(e.target.value)}
-                    id="email" required 
+                    placeholder="Email" required 
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    DoB
-                </label>
-                <input type="date" value={ Dob } 
+                <input type="text" value={ Dob } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setDob(e.target.value)} 
-                    id="dob" required 
+                    onFocus={(e) => (e.target.type = "date")} 
+                    placeholder="Date of Birth" required
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Mobile
-                </label>
                 <input type="number" value={ Mobile } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setMobile(e.target.value)} 
-                    id="mobile" required
+                    placeholder="Phone Number" required
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Whatsapp
-                </label>
                 <input type="number" value={ Whatsapp } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setWhatsapp(e.target.value)} 
-                    id="whatsapp" required 
+                    placeholder="WhatsApp Number" required 
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Branch
-                </label>
                 <input type="text" value={ Branch } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setBranch(e.target.value)}
-                    id="branch" required 
+                    placeholder="Branch of Study" required 
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Year of Study
-                </label>
                 <input type="number" value={ Year } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setYear(e.target.value)} 
-                    id="year" required 
+                    placeholder="Current Year" required 
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Registration No.
-                </label>
                 <input type="number" value={ Reg } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setReg(e.target.value)}
-                    id="reg" required 
+                    placeholder="Registration Number" required 
                 />
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Domain
-                </label>
                 <select value={Domain} 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 focus:font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setDomain(e.target.value)}
-                    id="domain" required>
+                    placeholder="Domain"  required>
                     {
                         domains.map((value) => (
                             <option value={ value } key={ value }>
@@ -135,19 +104,19 @@ const Form = () => {
                         ))
                     }
                 </select>
-            </div>
 
-            <div className="flex flex-col">
-                <label>
-                    Why do you want to join CB?
-                </label>
                 <input type="text" value={ Reason } 
+                    className="bg-gray-300 w-full rounded-xl px-3 py-2 font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
                     onChange={(e) => setReason(e.target.value)} 
-                    id="reason" required
+                    placeholder="Reason to join CodingBLocks LPU" required
                 />
-            </div>
 
-            <button type="submit">Submit</button>
+                <button type="submit"
+                    className="bg-primary rounded-xl px-3 py-4 w-full text-white font-bold"
+                >
+                    Submit
+                </button>
+            </div>
         </form>
     )
 };

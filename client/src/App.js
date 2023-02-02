@@ -4,12 +4,12 @@ import Form from './components/Form';
 
 function App() {
   return (
-      <div className="relative">
-        <div className="absolute">
-          <Form />
+      <div className="h-screen flex">
+        <div className="h-full w-full">
+          <Design />
         </div>
-        <div className="absolute">
-          {/* <Design /> */}
+        <div className="h-full w-full flex items-center">
+          <Form />
         </div>
       </div>
   );
