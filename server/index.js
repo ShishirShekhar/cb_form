@@ -1,16 +1,23 @@
 // Import required modules
 const express = require("express");
 const mongoose = require("mongoose");
+var bodyParser = require('body-parser');
+const cors = require("cors");
 const dotenv = require("dotenv");
 
 // Initialize app and other process
 const app = express();
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 dotenv.config();
 
 // Connect Database
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.URL)
+mongoose.connect(process.env.URL, {
+    dbName: "cb_recruitment"
+})
 .then(() => console.log("connection established!"))
 .catch((error) => console.log(error));
 
@@ -25,7 +32,7 @@ const formSchema = new mongoose.Schema({
     reg: String,
     year: String,
     domain: String,
-    reason: String,
+    reason: String
 });
 // Create form model
 const DataModel = mongoose.model("Data", formSchema);
