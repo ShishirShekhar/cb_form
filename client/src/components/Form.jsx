@@ -41,7 +41,7 @@ const Form = () => {
 
     return (
         <form onSubmit={ handleSubmit } className="flex flex-col items-center w-full">
-            <h1 className="text-3xl font-bold pb-4">CB Recruitment Form</h1>
+            <h1 className="text-3xl font-bold pb-4 text-white lg:text-black">CB Recruitment Form</h1>
 
             <div className="flex flex-col gap-2 items-center w-96">
                 <input type="text" value={ Name } 
