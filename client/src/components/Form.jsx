@@ -16,6 +16,7 @@ const Form = () => {
     const [Year, setYear] = useState("");
     const [Domain, setDomain] = useState(domains[0]);
     const [Reason, setReason] = useState("");
+    const [Bold, setBold] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -93,8 +94,9 @@ const Form = () => {
                 />
 
                 <select value={Domain} 
-                    className="bg-gray-300 w-full rounded-xl px-3 py-2 focus:font-bold placeholder:font-normal placeholder-gray-700 focus:outline-none"
+                    className={`bg-gray-300 w-full rounded-xl px-3 py-2 ${Bold ? "font-bold" : ""} placeholder:font-normal placeholder-gray-700 focus:outline-none`}
                     onChange={(e) => setDomain(e.target.value)}
+                    onFocus={() => setBold(true)}
                     placeholder="Domain"  required>
                     {
                         domains.map((value) => (
