@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         "primary": "#ff0707"
       },
+      backgroundImage: {
+        "tech": "url('./assets/tech.png')"
+      }
     },
   },
   plugins: [],
