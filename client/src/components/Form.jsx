@@ -80,7 +80,7 @@ const Form = () => {
 
     return (
         <form onSubmit={ handleSubmit } className="flex flex-col items-center w-full py-10">
-            <h1 className="text-3xl font-bold pb-4 text-white">CB Recruitment Form</h1>
+            <h1 className="text-3xl font-bold pb-4 text-white lg:text-primary">CB Recruitment Form</h1>
 
             <div className="flex flex-col gap-2 items-center w-80 sm:w-96">
                 <input type="text" value={ Name } 
@@ -153,7 +153,7 @@ const Form = () => {
                 />
 
                 <button type="submit"
-                    className="bg-white sm:bg-primary rounded-xl px-3 py-4 w-full text-primary sm:text-white font-bold drop-shadow-xl"
+                    className="bg-white sm:bg-primary rounded-xl px-3 py-4 w-full text-primary sm:text-white font-bold text-lg drop-shadow-xl"
                 >
                     Submit
                 </button>

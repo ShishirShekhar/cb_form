@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary": "#ff0707"
+        "primary": "#ff0707",
+        "cb": "#DF4338"
       },
       backgroundImage: {
         "tech": "url('./assets/tech.png')",
