@@ -4,7 +4,7 @@ import Form from './components/Form';
 
 function App() {
   return (
-    <div className="sm:h-screen flex flex-col lg:flex-row bg-tech sm:bg-none bg-no-repeat bg-cover bg-black bg-blend-overlay bg-opacity-20">
+    <div className="sm:h-screen flex flex-col lg:flex-row bg-tech sm:bg-tech2 bg-no-repeat bg-cover bg-black bg-blend-overlay bg-opacity-20">
       <div className="h-64 sm:h-full w-full">
         <Design />
       </div>

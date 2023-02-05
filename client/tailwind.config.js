@@ -7,7 +7,8 @@ module.exports = {
         "primary": "#ff0707"
       },
       backgroundImage: {
-        "tech": "url('./assets/tech.png')"
+        "tech": "url('./assets/tech.png')",
+        "tech2": "url('./assets/tech2.png')",
       }
     },
   },
