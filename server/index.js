@@ -3,7 +3,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 
 // Initialize app and other process
@@ -21,15 +20,6 @@ mongoose.connect(process.env.URL, {
 })
 .then(() => console.log("connection established!"))
 .catch((error) => console.log(error));
-
-// Create mail transport
-const transporter = nodemailer.createTransport({
-    service: "Gmail",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.PWD_USER,
-    },
-  });
 
 // Create form schema
 const formSchema = new mongoose.Schema({
@@ -62,25 +52,8 @@ app.get("/data", async (req, res) => {
 app.post("/submit", async (req, res) => {
     // Create and save new data
     try {
-        const newData  = new DataModel(req.body);
+        const newData = new DataModel(req.body);
         newData.save();
-    
-        const emailData = {
-            from: process.env.EMAIL_FROM,
-            to: req.body.email,
-            subject: `Coding Blocks LPU | Registration Successful`,
-            html: `
-              <p>Congratulation ${req.body.name} !!</p>
-              <p>Registration Successful</p>
-              <p>Kindly Wait For Interview</p>
-              <hr />
-              <p>This email may contain sensitive information</p>
-              <p>https://codingblockslpu.com</p>
-          `,
-        };
-        transporter.sendMail(emailData).then((sent) => {
-            console.log("Email Sent Successfully");    
-        });
         res.json({ message: "Data saved successfully!!" });
     } catch (err) {
         console.log(err);
