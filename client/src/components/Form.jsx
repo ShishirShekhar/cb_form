@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 const Form = () => {
     const domains = ["Select Domain", "Technical team", "Graphic designing & Video editing", 
@@ -38,44 +38,42 @@ const Form = () => {
         axios
         .post("http://localhost:3000/submit", data)
         .then((res) => {
-        console.log(res);
-        // console.log(res.data);
-        toast.success("Registration SuccessFull", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-        setName("");
-        setDob("");
-        setEmail("");
-        setMobile("");
-        setWhatsapp("");
+            toast.success("Registration SuccessFull", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
 
-        setBranch("");
-        setReg("");
-        setYear("");
-        setDomain(domains[0]);
-        setReason("");
-        setBold(false);
-      })
-      .catch((e) => {
-        console.log(e);
-        toast.error("Please Try Again !!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }); 
+            setName("");
+            setDob("");
+            setEmail("");
+            setMobile("");
+            setWhatsapp("");
+            setBranch("");
+            setReg("");
+            setYear("");
+            setDomain(domains[0]);
+            setReason("");
+            setBold(false);
+        })
+        .catch((e) => {
+            console.log(e);
+            toast.error("Please Try Again !!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }); 
     }
 
     return (
