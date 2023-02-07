@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/data" element={<Admin />} />
+          <Route path={"/data/" + process.env.REACT_APP_USER + "/" + process.env.REACT_APP_PSWD}element={<Admin />} />
         </Routes>
       </Router>
     </>
