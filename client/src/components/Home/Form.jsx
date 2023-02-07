@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from 'react-toastify';
 
+const baseURL = "https://cb-form01-5mi9ubjc4-shishirshekhar.vercel.app";
+
 const Form = () => {
     const domains = ["Select Domain", "Technical team", "Graphic designing & Video editing", 
                     "Social media & Content writing", "Event management & Marketing",
@@ -36,7 +38,7 @@ const Form = () => {
         };
 
         axios
-        .post("http://localhost:3000/submit", data)
+        .post(`${baseURL}/submit`, data)
         .then((res) => {
             toast.success("Registration SuccessFull", {
                 position: "top-center",

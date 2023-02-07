@@ -4,6 +4,8 @@ import axios from "axios";
 import Papa from "papaparse";
 import DataTable from "../components/Admin/DataTable";
 
+const baseURL = "https://cb-form01-5mi9ubjc4-shishirshekhar.vercel.app";
+
 const Admin = () => {
     // Get url params
     const location = useLocation();
@@ -19,7 +21,7 @@ const Admin = () => {
     // Create function to fetch data
     const fetchData = () => {
         axios
-        .get("http://localhost:3000/data")
+        .get(`${baseURL}/data`)
         .then((res) => {
             addData(res.data);
         })
