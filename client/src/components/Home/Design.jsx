@@ -1,5 +1,5 @@
-import logoGray from "../assets/cblogogray.png";
-import logoWhite from "../assets/cblogowhite.png";
+import logoGray from "../../assets/cblogogray.png";
+import logoWhite from "../../assets/cblogowhite.png";
 
 const Design = () => {
     return (

@@ -24,7 +24,7 @@ mongoose.connect(process.env.URL, {
 // Create form schema
 const formSchema = new mongoose.Schema({
     name: String,
-    dob: Date,
+    dob: String,
     email: String,
     mobile: String,
     whatsapp: String,

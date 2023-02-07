@@ -1,20 +1,18 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Design from './components/Design';
-import Form from './components/Form';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Home from './pages/Home';
+import Admin from './pages/Admin';
 
 function App() {
   return (
-    <div className="sm:h-screen flex flex-col lg:flex-row bg-tech sm:bg-tech2 bg-no-repeat bg-cover bg-black bg-blend-overlay bg-opacity-10">
-      <ToastContainer />
-      <div className="h-64 sm:h-full w-full">
-        <Design />
-      </div>
-      <div className="h-full w-full flex items-center">
-        <Form />
-      </div>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/data" element={<Admin />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
