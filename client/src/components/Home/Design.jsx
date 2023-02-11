@@ -8,8 +8,9 @@ const Design = () => {
                 <div className="text-white flex flex-col items-center gap-3 w-80 sm:w-96">
                     <p className="font-bold text-3xl drop-shadow-2xl">Want to be one of us?</p>
                     <p className="text-center text-xl drop-shadow-2xl">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam,
-                        quisquam.
+                        {`Are you ready to be the`}
+                        <br></br>
+                        {`<CSS> to our <HTML>`}
                     </p>
                 </div>
 
